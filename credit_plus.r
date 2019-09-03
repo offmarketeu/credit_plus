@@ -28,11 +28,12 @@ num_sim=1000000
 nrnd <- matrix(qnorm(rnorm(0,1)), nrow= num_sim, ncol=36)
 
 
-#
-
+# sys + idio
 
 mc_ <- nrnd %*% as.matrix(mc)
+sys_cwi <- mc_ %*% t(ec)
 idio <- sqrt(1 - sum(ec^2))* matrix(qnorm(rnorm(0,1)), nrow= num_sim, ncol=1)
-sys_cwi <- as.matrix(ec) %*% as.matrix(t(nrnd))
+
+# Perdidas
 
 
